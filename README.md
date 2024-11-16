@@ -9,7 +9,7 @@ SeeClickBuy is a chrome extension to buy anything you see on the internet. It al
 | ![GIF 1](./assets/clip1.gif) | ![GIF 2](./assets/clip2.gif) | ![GIF 3](./assets/clip3.gif) |
 |----------------------------------------|----------------------------------------|----------------------------------------|
 
-Built on top of Meta's Segment-Anything-2 model, Google Lens, and the OpenAI API.
+Built on top of Meta's Segment-Anything-2 (SAM2) model, Google Lens, and the OpenAI API. SAM2 is used to segment a clicked image and remove background pixels. Google lens can visually find similar images across online marketplaces and return product metadata. We call an LLM to summarize product metadata into a single description for the clicked object. Users can chat with the extension to make edits to this description (e.g. change color or brand). This performs a new call to the Google Shopping API using the updated description.
 
 ## Setup
 
@@ -17,17 +17,19 @@ These instructions are for a linux machine with a GPU e.g. a lambda or runpod ma
 
 ### Download models
 
-Download model checkpoint [sam2.1_hiera_large.pt](https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt) and put it in the `ai/checkpoints/` folder.
+Download a model checkpoint [sam2.1_hiera_large.pt](https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt) and put it in the `ai/checkpoints/` folder.
 
 ### Firebase 
 
 You will need a Firebase project, which saves all the clicks and chats users make with the extension. You can create a free Firebase project [here](https://firebase.google.com/) in the console. 
 
-Once you have a project, create a service account in the console and download the `service_account.json` file. Place it in `server/server/seeclickbuy.json` (see line 5 of `database.py`). 
+Once you have a project, create a service account in the console and download the `service_account.json` file. Rename it and place it in `server/server/seeclickbuy.json` (see line 5 of `database.py`). 
 
 ### Frontend Installation
 
-(I am using `node v19.7.0` through `nvm`.) We use a chrome extension boilerplate in `odin/`. Most of the files will not be relevant to this project. We recomment paying attention to `pages/popup`, `pages/content-runtime`, and `packages/shared/lib/hooks`.
+(I am using `node v19.7.0` through `nvm`.) 
+
+We use a chrome extension boilerplate in `odin/`. Most of the files will not be relevant to this project. We recommend paying attention to `pages/popup`, `pages/content-runtime`, and `packages/shared/lib/hooks`.
 
 From inside the `odin/` directory, run 
 ```bash
@@ -43,7 +45,7 @@ It is also worth noting line 1 of `shared/lib/hooks/api.ts` which sets the base 
 ```
 const BASE_URL = "http://localhost:8000";
 ```
-You will need to change this is you deploy your web server to a remote server e.g. `ngrok`.
+You will need to change this if you deploy your web server to a remote server e.g. `ngrok`.
 
 ### Backend Installation
 
