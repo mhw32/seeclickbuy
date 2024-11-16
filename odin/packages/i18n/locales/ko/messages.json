@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "description": "설명",
+    "message": "원하는 것을 가장 쉽게 구매할 수 있게 도와주는 크롬 익스텐션입니다."
+  },
+  "extensionName": {
+    "description": "확장 프로그램 이름",
+    "message": "See Click Buy. 찾고 있는 것을 가장 쉽게 구매하는 방법입니다."
+  },
+  "toggleTheme": {
+    "message": "테마 전환"
+  },
+  "loading": {
+    "message": "로딩 중..."
+  },
+  "greeting": {
+    "description": "인사 메시지",
+    "message": "안녕하세요, 제 이름은 $NAME$입니다.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "김철수"
+      }
+    }
+  },
+  "hello": {
+    "description": "Placeholder 예시",
+    "message": "안녕 $1"
+  }
+}

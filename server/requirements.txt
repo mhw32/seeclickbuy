@@ -1,0 +1,8 @@
+celery[redis]
+fastapi[standard]
+firebase-admin
+requests
+python-dotenv
+uvicorn[standard]
+serpapi
+google-search-results

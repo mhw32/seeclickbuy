@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "description": "See Click Buy",
+    "message": "Chrome extension that makes buying what you want the easiest."
+  },
+  "extensionName": {
+    "description": "Odin",
+    "message": "See click buy. The easiest way to buy what you're looking for."
+  },
+  "toggleTheme": {
+    "message": "Toggle theme"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "greeting": {
+    "description": "Greeting message",
+    "message": "Hello, My name is $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "hello": {
+    "description": "Placeholder example",
+    "message": "Hello $1"
+  }
+}
