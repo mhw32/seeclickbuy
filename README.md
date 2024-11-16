@@ -13,7 +13,7 @@ Built on top of Meta's Segment-Anything-2 model, Google Lens, and the OpenAI API
 
 ## Setup
 
-These instructions are for a linux machine with a GPU e.g. a lambda or runpod machine. 
+These instructions are for a linux machine with a GPU e.g. a lambda or runpod machine. You may need to customize this setup for your own machine. 
 
 ### Download models
 
@@ -38,6 +38,12 @@ Then run
 pnpm install
 ```
 which should create a `node_modules` folder among other things.  
+
+It is also worth noting line 1 of `shared/lib/hooks/api.ts` which sets the base URL for the web server.
+```
+const BASE_URL = "http://localhost:8000";
+```
+You will need to change this is you deploy your web server to a remote server e.g. `ngrok`.
 
 ### Backend Installation
 
