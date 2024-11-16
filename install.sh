@@ -1,13 +1,5 @@
 #!/bin/bash
 
-if command -v git-lfs &> /dev/null
-then
-  git-lfs pull  # Download the checkpoints
-else
-  echo "GIT-LFS not installed. Please run `apt-get install git-lfs`."
-  exit 1
-fi
-
 if command -v nvidia-smi &> /dev/null
 then
   # Initialize conda (needed in non-interactive scripts)
