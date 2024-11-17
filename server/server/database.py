@@ -3,7 +3,7 @@ from typing import Optional
 from firebase_admin import firestore, credentials, get_app, initialize_app
 
 SERVICE_ACCOUNT_FILE = join(dirname(__file__), 'seeclickbuy.json')
-FIREBASE_STORAGE_BUCKET = 'seeclickbuy-a6000.appspot.com'
+FIREBASE_STORAGE_BUCKET = 'seeclickbuy-XXXX.appspot.com'  # TODO 
 
 def get_firebase_client(service_account_file: Optional[str] = SERVICE_ACCOUNT_FILE) -> 'firestore.Client':
   '''Instantiate a firebase client.

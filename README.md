@@ -21,9 +21,9 @@ Download a model checkpoint [sam2.1_hiera_large.pt](https://dl.fbaipublicfiles.c
 
 ### Firebase 
 
-You will need a Firebase project, which saves all the clicks and chats users make with the extension. You can create a free Firebase project [here](https://firebase.google.com/) in the console. 
+You will need a Firebase project, which saves all the clicks and chats users make with the extension. You can create a free Firebase project [here](https://firebase.google.com/) in the console. Enable firebase storage within the project. 
 
-Once you have a project, create a service account in the console and download the `service_account.json` file. Rename it and place it in `server/server/seeclickbuy.json` (see line 5 of `database.py`). 
+Once you have a project, create a service account in the console and download the `service_account.json` file. Rename it and place it in `server/server/seeclickbuy.json` (see line 5 of `database.py`). Replace line 6 of `database.py` with the bucket name for your firebase storage. 
 
 ### Frontend Installation
 
